@@ -8,9 +8,11 @@ import VueFusionCharts from 'vue-fusioncharts';
 // import FusionCharts modules and resolve dependency
 import FusionCharts from 'fusioncharts'
 import Charts from 'fusioncharts/fusioncharts.charts'
+import Maps from 'fusioncharts/fusioncharts.maps'
 
 // resolve charts dependency
 Charts(FusionCharts);
+Maps(FusionCharts);
 
 // register VueFusionCharts component
 Vue.use(VueFusionCharts, FusionCharts);
