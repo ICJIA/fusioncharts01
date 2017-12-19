@@ -5,18 +5,19 @@ import App from './App'
 import router from './router'
 import VueFusionCharts from 'vue-fusioncharts';
 
-
 // import FusionCharts modules and resolve dependency
-// import FusionCharts from 'fusioncharts'
-// import Charts from 'fusioncharts/fusioncharts.charts'
-
+import FusionCharts from 'fusioncharts'
+import Charts from 'fusioncharts/fusioncharts.charts'
+import Maps from 'fusioncharts/fusioncharts.maps'
+import IllinoisMap from '../static/fusioncharts.illinois.js';
 
 // resolve charts dependency
-// Charts(FusionCharts);
-
+Charts(FusionCharts);
+Maps(FusionCharts);
+IllinoisMap(FusionCharts);
 
 // register VueFusionCharts component
-Vue.use(VueFusionCharts);
+Vue.use(VueFusionCharts, FusionCharts);
 
 Vue.config.productionTip = false
 
@@ -24,7 +25,6 @@ Vue.config.productionTip = false
 new Vue({
     el: '#app',
     router,
-
     template: '<App/>',
     components: { App }
 })
